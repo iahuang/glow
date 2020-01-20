@@ -1,0 +1,1 @@
+class NoOperationMatchError(Exception): pass
