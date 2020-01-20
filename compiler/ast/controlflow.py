@@ -15,4 +15,16 @@ class IfStatement(Node):
             code_block = Str(text).cut_left('if'+condition).match_brackets('{', '}')
             if code_block:
                 return NodeMatch([condition, code_block], 'if'+condition+'{'+code_block+'}')
-            
+
+@dataclass
+class Function(Node):
+    args: Node
+    block: Node
+    @staticmethod
+    def match(text):
+        m = Node.regex_match(r'func \w+ ?\(\){.+}', text, newline_insensitive=True) # preliminary check
+        if m:
+            condition = re.match('(?<=if).+ (?={)', m).group()
+            code_block = Str(text).cut_left('if'+condition).match_brackets('{', '}')
+            if code_block:
+                return NodeMatch([condition, code_block], 'if'+condition+'{'+code_block+'}')

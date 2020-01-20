@@ -31,7 +31,7 @@ def resolve_commas(args_node): # turn nested _comma operations into one NodeGrou
 
 # General parsing function
 
-def parse_exp(expr, tb=0, additional=[]): # optionally pass extra node types based on the parsing context
+def parse_exp(expr, tb=0, context=[]): # optionally pass extra node types based on the parsing context
     expr = expr.strip()
     node_types = [
         ast.Name,
