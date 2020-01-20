@@ -1,13 +1,13 @@
-from ast import Node, BinaryOp, NodeMatch
+from . import Node, BinaryOp, NodeMatch
 import re
-from util import Str
+from . import util
 
 class ArithmeticOp(BinaryOp): # binary operator that follows the format a # b where b is something like +, -, etc.
     @staticmethod
     def match(op, text):
         m = Node.regex_match(r'.+' + re.escape(op) + '.+', text)
         if m:
-            args = Str(m).split_first(op)
+            args = util.Str(m).split_first(op)
             return NodeMatch(args, m)
 
 class AdditionOp(ArithmeticOp):
