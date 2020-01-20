@@ -1,4 +1,4 @@
-from . import err
+from ast import err
 
 class Str(str): # string with extra utility functions
     def split_first(self, delimiter):

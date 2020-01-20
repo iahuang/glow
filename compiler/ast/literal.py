@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Any
-from . import Node, NodeMatch
-from . import err
+from ast import Node, NodeMatch
+from ast import err
 
 @dataclass
 class Literal(Node): # node that represents a single value
