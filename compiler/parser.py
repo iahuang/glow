@@ -44,7 +44,7 @@ def parse_exp(expr, tb=0, context=[]): # optionally pass extra node types based 
         ast.arithmetic.SubtractionOp,
         ast.CallOp,
         ast.DotOp
-    ]+additional
+    ]+context
     
     def debug_log(*args):
         pass
@@ -75,4 +75,5 @@ def parse_exp(expr, tb=0, context=[]): # optionally pass extra node types based 
     raise err.NoOperationMatchError() # no node type was able to match the given expression
 
 import timeit
-print(parse_exp('func(a, b, c, "lmao", 1.2) + bees(e).e'))
+n = parse_exp('func(a, b, c, "lmao", 1.2) + bees(e).e')
+print(n.__dict__)

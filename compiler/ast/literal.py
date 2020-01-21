@@ -7,20 +7,17 @@ from ast import err
 class Literal(Node): # node that represents a single value
     value: Any
 
-class Numeric(Literal): # numeric literal like "3" or "4.245"
-    pass
-
-class Integer(Numeric):
+class Integer(Literal):
     @staticmethod
     def match(text):
         return Node.simple_match(r'\d+', text)
 
-class Float(Numeric):
+class Float(Literal):
     @staticmethod
     def match(text):
         return Node.simple_match(r'\d+.\d+', text)
 
-class String(Numeric):
+class String(Literal):
     @staticmethod
     def match(text):
         if text[0] != '"': # doesn't start with a quote; not a string lmao

@@ -5,7 +5,7 @@ class SourceMeta:
         self.strings = []
     
     def _str_placeholder_from_index(self, i):
-        return '"$_STR'+str(i)+'"'
+        return '$_STR'+str(i)
 
     def add_str(self, s):
         if not s in self.strings:
@@ -18,6 +18,12 @@ class SourceMeta:
         table = {}
         for index, s in enumerate(self.strings):
             table[self._str_placeholder_from_index(index)] = s
+        return table
+    
+    def get_raw_replacement_table(self):
+        table = {}
+        for index, s in enumerate(self.strings):
+            table['"'+self._str_placeholder_from_index(index)+'"'] = '"'+s+'"'
         return table
 
 def preparse(text):
@@ -38,7 +44,7 @@ def preparse(text):
                 if next_char == '"': # escaped quote?
                     c+=1 # skip the backslash
             if c == '"': # closing quote
-                meta.add_str('"'+string+'"')
+                meta.add_str(string)
                 in_string = False
                 string = ""
             elif c == '\n':
@@ -51,17 +57,7 @@ def preparse(text):
         i+=1
     if in_string: raise err.UnexpectedEOF()
 
-    table = meta.get_str_table()
+    table = meta.get_raw_replacement_table()
     for replacement, string in table.items():
         text = text.replace(string, replacement)
     return text,meta
-
-
-test = """
-lmao = "eee"
-d = "ooooo"
-c = "eee"
-"""
-
-m = preparse(test)
-print(m[0])
