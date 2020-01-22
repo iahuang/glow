@@ -8,7 +8,7 @@ class Str(str): # string with extra utility functions
             return [spl[0], extra]
         return spl
 
-    def search_brackets(self, opening, closing):
+    def search_brackets(self, opening, closing, include_brackets=False):
         nest = 0
         has_entered = False
         bracketed = ""
@@ -26,6 +26,8 @@ class Str(str): # string with extra utility functions
                 bracketed+=c
 
             if nest == 0 and has_entered:
+                if include_brackets:
+                    return bracketed
                 return bracketed[1:-1]
     
     def cut_left(self, s): # like .strip but like different
@@ -33,7 +35,7 @@ class Str(str): # string with extra utility functions
             return Str(self[len(s):])
         return self
 
-    def match_brackets(self, opening, closing):
+    def match_brackets(self, opening, closing, include_brackets=False):
         if self.startswith(opening):
-            return self.search_brackets(opening, closing)
+            return self.search_brackets(opening, closing, include_brackets)
             

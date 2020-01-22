@@ -1,9 +1,10 @@
-from util import Str
+from ast.util import Str
 import ast.controlflow
 
-t = '''if lmao 
-{
-    test
+
+
+t = '''func plus(a: int, b: int): int {
+	bruh
 }'''
-print(ast.controlflow.IfStatement.match(t))
+print(ast.controlflow.Function.match(t))
 

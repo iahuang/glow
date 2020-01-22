@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import re
 from typing import Any
 import err
-from util import Str
+from ast.util import Str
 
 class NodeMatch:
     def __init__(self, args, matched_text=None):
