@@ -2,6 +2,7 @@ from ast import Node, NodeMatch
 import re
 from ast.util import Str
 from dataclasses import dataclass
+from ast.matcher import compound_match
 
 @dataclass
 class IfStatement(Node):
@@ -9,12 +10,13 @@ class IfStatement(Node):
     block: Node
     @staticmethod 
     def match(text):
-        m = Node.regex_match('if .+ {.+}', text, newline_insensitive=True) # preliminary check
-        if m:
-            condition = re.match('(?<=if).+ (?={)', m).group()
-            code_block = Str(text).cut_left('if'+condition).match_brackets('{', '}')
-            if code_block:
-                return NodeMatch([condition, code_block], 'if'+condition+'{'+code_block+'}')
+        matchers = [
+            'if',                                               # if
+            '(?<=if).+ (?={)',                                  # condition
+            lambda text: Str(text).match_brackets('{', '}')     # code body
+        ]
+        matches = compound_match(text, matchers)
+        return matches[1:] # we don't need the "if" thing lol
 
 @dataclass
 class Function(Node):
