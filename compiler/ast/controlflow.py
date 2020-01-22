@@ -12,11 +12,11 @@ class IfStatement(Node):
     def match(text):
         matchers = [
             'if',                                               # if
-            '(?<=if).+ (?={)',                                  # condition
+            '.+ \n?(?={)',                                         # condition
             lambda text: Str(text).match_brackets('{', '}')     # code body
         ]
         matches = compound_match(text, matchers)
-        return matches[1:] # we don't need the "if" thing lol
+        if matches: return matches[1:] # we don't need the "if" thing lol
 
 @dataclass
 class Function(Node):

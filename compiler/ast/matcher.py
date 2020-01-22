@@ -8,6 +8,7 @@ def compound_match(text, matchers):
     matches = []
     
     for matcher in matchers:
+        print('matching',repr(text),'with matcher',repr(matcher))
         match_result = None
         if type(matcher) == str: # treat it as regex
             m = re.match(matcher, text)

@@ -1,6 +1,9 @@
 from util import Str
-import ast
+import ast.controlflow
 
-t = '"lmao"'
-print(ast.String.match(t))
+t = '''if lmao 
+{
+    test
+}'''
+print(ast.controlflow.IfStatement.match(t))
 
