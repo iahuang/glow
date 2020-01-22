@@ -2,6 +2,8 @@ import ast
 import ast.arithmetic
 import ast.literal
 import err
+from preparse import preparse
+from postparse import postparse
 
 def match_reaches_expr_end(match, expr):
     # return True of expression reaches a logical breaking point in the expression
@@ -74,6 +76,8 @@ def parse_exp(expr, tb=0, context=[]): # optionally pass extra node types based 
 
     raise err.NoOperationMatchError() # no node type was able to match the given expression
 
-import timeit
-n = parse_exp('func(a, b, c, "lmao", 1.2) + bees(e).e')
+t = 'func(a, b, c, "lmao", 1.2) + bees(e).e'
+t, meta = preparse(t)
+n = parse_exp(t)
+print(postparse(n, meta))
 print(n.__dict__)
