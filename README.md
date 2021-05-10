@@ -41,4 +41,6 @@ struct Circle {
 var circle = Circle {radius: 5}
 ```
 
+## Glow / Codebase
 
+This repository houses the Glow compiler/transpiler, which, for now, is written in Typescript.
