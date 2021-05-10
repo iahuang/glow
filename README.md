@@ -20,25 +20,25 @@ While this may be true in some cases, a lot of times, development happens increm
 ## Glow by Example
 
 ```swift
-var a = 1
-var b: int
+var a = 1;
+var b: int;
 
 func add(a: int, b: int) {
-    return a+b
+    return a+b;
 }
 ```
 
 ```swift
 struct Circle {
-    radius: int
+    radius: int;
     
     get_area() {
-        const pi = 3.1459
-        return pi * this.radius * this.radius
+        const pi = 3.1459;
+        return pi * this.radius * this.radius;
     }
 }
 
-var circle = Circle {radius: 5}
+var circle = Circle {radius: 5};
 ```
 
 ## Glow / Codebase
