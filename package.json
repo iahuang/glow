@@ -1,3 +1,6 @@
 {
-    "name": "glow"
+    "name": "glow",
+    "dependencies": {
+        "@types/node": "^15.0.2"
+    }
 }
