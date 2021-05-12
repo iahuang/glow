@@ -5,6 +5,7 @@ export interface Token {
     content: string;
     source: SourceFile;
     pos: SourcePos;
+    name: string;
 }
 
 export enum TokenType {
@@ -41,6 +42,9 @@ export enum TokenType {
     Minus,
     Div,
 
+    // Numerics
+    IntegerLiteral,
+
     // Keywords
     KWVar,
     KWConst,
@@ -66,9 +70,10 @@ export class TokenMatcher {
             .addRegexPattern(TokenType.EOF, /$/)
             .addRegexPattern(TokenType.EOL, /\n/)
             .addRegexPattern(TokenType.Whitespace, /[ \t]/)
+            .addRegexPattern(TokenType.IntegerLiteral, /\d+/)
             .addPattern(TokenType.DblQuote, '"')
             .addPattern(TokenType.EscapedDblQuote, '\\"')
-            .addPattern(TokenType.DoubleSlash, '//')
+            .addPattern(TokenType.DoubleSlash, "//")
             .addPattern(TokenType.CurlyBraceLeft, "{")
             .addPattern(TokenType.CurlyBraceRight, "}")
             .addPattern(TokenType.SquareBrackLeft, "[")
@@ -100,7 +105,7 @@ export class TokenMatcher {
             let tokenPattern = this.tokenPatterns.get(tokenType);
             if (!tokenPattern) throw new Error(`Parsing method for token type ${TokenType[tokenType]} is not defined!`);
             let match = this._matchToken(source, tokenPattern);
-            if (match) {
+            if (match !== null) {
                 return {
                     tokenType: tokenType,
                     matchedString: match,
@@ -121,9 +126,9 @@ export class TokenMatcher {
         if (pattern.regex) {
             let regexMatch = pattern.regex.exec(source);
             if (!regexMatch) return null;
-
+            
             // the regex pattern should really only match the beginning of the string; just make sure
-            if (!source.startsWith(regexMatch[0])) return null;
+            if (regexMatch.index !== 0) return null;
 
             return regexMatch[0];
         }

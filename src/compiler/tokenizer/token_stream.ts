@@ -36,6 +36,7 @@ const GenericSyntaxTokens = [
     TokenType.KWConst,
     TokenType.KWFunc,
     TokenType.Name,
+    TokenType.IntegerLiteral,
 ];
 
 const StringTokens = [TokenType.StringChar, TokenType.EOL, TokenType.EOF, TokenType.EscapedDblQuote];
@@ -99,30 +100,39 @@ export class TokenStream {
         let sourcePortion = this.source.contents.substring(this._index);
 
         // the subset of tokens that we can use depends on the tokenizing mode.
-        let token = this.matcher.match(sourcePortion, this._getContextualTokenSet());
+        let match = this.matcher.match(sourcePortion, this._getContextualTokenSet());
 
         // if a token could not be matched, assume invalid character
         // and return an appropriate compiler error. in theory
         // we could skip to the next line and keep trying to parse,
         // but it's probably not worth it.
-        if (!token) {
+        if (match === null) {
             throw new CompilerError(this.source, this._getCurrPos(), `Unexpected character [${sourcePortion[0]}]`);
         }
 
-        this._index += token.matchedString.length;
-        this._col += token.matchedString.length;
+        if (match.tokenType === TokenType.DblQuote) {
+            if (this.mode === TokenizerMode.Syntax) {
+                this.mode = TokenizerMode.String;
+            } else if (this.mode === TokenizerMode.String) {
+                this.mode = TokenizerMode.Syntax;
+            }
+        }
+
+        this._index += match.matchedString.length;
+        this._col += match.matchedString.length;
 
         // reset col counter, increment line counter on newline
-        if (token.tokenType === TokenType.EOL) {
+        if (match.tokenType === TokenType.EOL) {
             this._lineNumber++;
             this._col = 1;
         }
 
         return {
-            type: token.tokenType,
-            content: token.matchedString,
+            type: match.tokenType,
+            content: match.matchedString,
             source: this.source,
             pos: this._getCurrPos(),
+            name: TokenType[match.tokenType],
         };
     }
 
@@ -137,7 +147,7 @@ export class TokenStream {
         */
 
         let t = this._nextToken();
-        
+
         while (t.type === TokenType.Whitespace || t.type === TokenType.EOL) {
             t = this._nextToken();
         }
