@@ -118,6 +118,10 @@ export class TokenStream {
             }
         }
 
+        // copy the position of the new token before
+        // we shift the internal position counters
+        let tokenPos: SourcePos = { ...this._getCurrPos() };
+
         this._index += match.matchedString.length;
         this._col += match.matchedString.length;
 
@@ -131,7 +135,7 @@ export class TokenStream {
             type: match.tokenType,
             content: match.matchedString,
             source: this.source,
-            pos: this._getCurrPos(),
+            pos: tokenPos,
             name: TokenType[match.tokenType],
         };
     }

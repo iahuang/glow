@@ -7,8 +7,8 @@ let source = new SourceFile("examples/test.glo");
 let stream = new TokenStream();
 stream.loadSource(source);
 
-let t = stream._nextToken();
+let t = stream.nextToken();
 while (t.type !== TokenType.EOF) {
     console.log(t);
-    t = stream._nextToken();
+    t = stream.nextToken();
 }
