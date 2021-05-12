@@ -54,7 +54,7 @@ export class SourceFile {
     }
 }
 
-interface SourcePos {
+export interface SourcePos {
     col: number;
     line: number;
 }

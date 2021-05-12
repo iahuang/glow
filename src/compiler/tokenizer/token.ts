@@ -1,23 +1,28 @@
-import { SourceFile } from "../source";
+import { SourceFile, SourcePos } from "../source";
 
 export interface Token {
     type: TokenType;
     content: string;
     source: SourceFile;
-    line: number;
-    col: number;
+    pos: SourcePos;
 }
 
 export enum TokenType {
     // A symbol such as a variable or function name.
     Name,
 
-    // String character token; represents any character inside a string literal.
-    StringChar,
+    // String tokens
+    StringChar, // String character token; represents any character inside a string literal.
+    EscapedDblQuote, // \"
+
+    // Comment tokens
+    DoubleSlash, // "//"
+    CommentChar, // Any character inside of a comment
 
     // Special tokens
     EOL, // represents "\n" or "\r\n"
-    EOF, // represnets the end of the source file.
+    EOF, // represents the end of the source file.
+    Whitespace, // represents a whitespace character.
 
     // Basic syntax tokens
     DblQuote,
@@ -50,9 +55,6 @@ interface TokenPattern {
 
 /*
     The TokenMatcher class contains definitions for many of the above syntax tokens.
-
-    the method TokenMatcher.match() returns a list of all the token types + matched strings that fall at the start
-    of the provided string.
 */
 
 export class TokenMatcher {
@@ -63,7 +65,10 @@ export class TokenMatcher {
             .addRegexPattern(TokenType.StringChar, /./)
             .addRegexPattern(TokenType.EOF, /$/)
             .addRegexPattern(TokenType.EOL, /\n/)
+            .addRegexPattern(TokenType.Whitespace, /[ \t]/)
             .addPattern(TokenType.DblQuote, '"')
+            .addPattern(TokenType.EscapedDblQuote, '\\"')
+            .addPattern(TokenType.DoubleSlash, '//')
             .addPattern(TokenType.CurlyBraceLeft, "{")
             .addPattern(TokenType.CurlyBraceRight, "}")
             .addPattern(TokenType.SquareBrackLeft, "[")
@@ -83,22 +88,27 @@ export class TokenMatcher {
             .addPattern(TokenType.KWFunc, "func");
     }
 
-    match(source: string, allowedTokenType: TokenType[]) {
-        let matches = [];
+    match(source: string, allowedTokenTypes: TokenType[]) {
+        /*
+            Given a list of allowed tokens, return a matching token type. This function
+            will exit when the first matching token is found; therefore order is important
+            when passing the array. For instance, "==" should be checked before "=" and the generic
+            "Name" token should be checked AFTER checking keyword tokens.
+        */
 
-        for (let tokenType of allowedTokenType) {
+        for (let tokenType of allowedTokenTypes) {
             let tokenPattern = this.tokenPatterns.get(tokenType);
             if (!tokenPattern) throw new Error(`Parsing method for token type ${TokenType[tokenType]} is not defined!`);
             let match = this._matchToken(source, tokenPattern);
             if (match) {
-                matches.push({
+                return {
                     tokenType: tokenType,
                     matchedString: match,
-                });
+                };
             }
         }
 
-        return matches;
+        return null;
     }
 
     _matchToken(source: string, pattern: TokenPattern): string | null {
