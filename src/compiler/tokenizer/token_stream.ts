@@ -43,6 +43,48 @@ const StringTokens = [TokenType.StringChar, TokenType.EOL, TokenType.EOF, TokenT
 
 const CommentTokens = [TokenType.EOL, TokenType.EOF, TokenType.CommentChar];
 
+class TokenState {
+    index = 0;
+    ln = 1;
+    col = 1;
+
+    reset() {
+        this.index = 0;
+        this.ln = 1;
+        this.col = 1;
+    }
+
+    incrementPos(by: number) {
+        this.col += by;
+        this.index += by;
+    }
+
+    nextLine() {
+        this.ln++;
+        this.col = 1;
+    }
+
+    getPos(): SourcePos {
+        return {
+            line: this.ln,
+            col: this.col,
+        };
+    }
+
+    set(state: TokenState) {
+        this.ln = state.ln;
+        this.index = state.index;
+        this.col = state.col;
+    }
+
+    clone(): TokenState {
+        /*
+            Creates a copy of this object.
+        */
+        return Object.assign(new TokenState(), this);
+    }
+}
+
 export class TokenStream {
     matcher: TokenMatcher;
     source: SourceFile;
@@ -50,9 +92,7 @@ export class TokenStream {
     mode: TokenizerMode;
 
     // current position in the source file.
-    _index: number;
-    _lineNumber: number;
-    _col: number;
+    readonly state: TokenState;
 
     constructor() {
         this.matcher = new TokenMatcher();
@@ -60,9 +100,7 @@ export class TokenStream {
         this.source = null as any;
 
         // set state variables
-        this._index = 0;
-        this._lineNumber = 1;
-        this._col = 1;
+        this.state = new TokenState();
     }
 
     _getContextualTokenSet() {
@@ -77,14 +115,11 @@ export class TokenStream {
         }[this.mode];
     }
 
-    _getCurrPos(): SourcePos {
+    getSourcePos(): SourcePos {
         /*
             Gets the current position in the file as a ln:col object.
         */
-        return {
-            line: this._lineNumber,
-            col: this._col,
-        };
+        return this.state.getPos();
     }
 
     _nextToken(): Token {
@@ -97,7 +132,7 @@ export class TokenStream {
         */
 
         // the source code minus the part we've already parsed
-        let sourcePortion = this.source.contents.substring(this._index);
+        let sourcePortion = this.source.contents.substring(this.state.index);
 
         // the subset of tokens that we can use depends on the tokenizing mode.
         let match = this.matcher.match(sourcePortion, this._getContextualTokenSet());
@@ -107,7 +142,7 @@ export class TokenStream {
         // we could skip to the next line and keep trying to parse,
         // but it's probably not worth it.
         if (match === null) {
-            throw new CompilerError(this.source, this._getCurrPos(), `Unexpected character [${sourcePortion[0]}]`);
+            throw new CompilerError(this.source, this.getSourcePos(), `Unexpected character "${sourcePortion[0]}"`);
         }
 
         if (match.tokenType === TokenType.DblQuote) {
@@ -120,15 +155,13 @@ export class TokenStream {
 
         // copy the position of the new token before
         // we shift the internal position counters
-        let tokenPos: SourcePos = { ...this._getCurrPos() };
-
-        this._index += match.matchedString.length;
-        this._col += match.matchedString.length;
+        let tokenPos: SourcePos = { ...this.getSourcePos() };
+        let tokenLength = match.matchedString.length;
+        this.state.incrementPos(tokenLength);
 
         // reset col counter, increment line counter on newline
         if (match.tokenType === TokenType.EOL) {
-            this._lineNumber++;
-            this._col = 1;
+            this.state.nextLine();
         }
 
         return {
@@ -162,8 +195,6 @@ export class TokenStream {
         this.source = source;
 
         // reset state variables
-        this._index = 0;
-        this._lineNumber = 1;
-        this._col = 1;
+        this.state.reset();
     }
 }
