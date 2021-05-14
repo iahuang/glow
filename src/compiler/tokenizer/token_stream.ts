@@ -43,7 +43,7 @@ const StringTokens = [TokenType.StringChar, TokenType.EOL, TokenType.EOF, TokenT
 
 const CommentTokens = [TokenType.EOL, TokenType.EOF, TokenType.CommentChar];
 
-class TokenState {
+export class TokenState {
     index = 0;
     ln = 1;
     col = 1;

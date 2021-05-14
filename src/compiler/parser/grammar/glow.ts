@@ -5,15 +5,18 @@ export class GlowGrammar extends Grammar {
     constructor() {
         super();
 
-        this.defineGrammarRule("expr", [[gcRule("paren").label("body")], [gcRule("mult").label("body")]]);
+        this.defineGrammarRule("expr", [[gcRule("paren").setName("body")], [gcRule("mult").setName("body")]]);
         this.defineGrammarRule("paren", [
-            [gcToken(TokenType.ParenLeft), gcRule("expr").label("body"), gcToken(TokenType.ParenRight)],
+            [gcToken(TokenType.ParenLeft), gcRule("expr").setName("body"), gcToken(TokenType.ParenRight)],
         ]);
         this.defineGrammarRule("mult", [
-            [gcRule("atomic").label("a"), gcToken(TokenType.Astrisk), gcRule("atomic").label("b")],
-            [gcRule("expr").label("a"), gcToken(TokenType.Astrisk), gcRule("expr").label("b")],
-            [gcRule("atomic").label("a"), gcToken(TokenType.Astrisk), gcRule("expr").label("b")],
-            [gcRule("expr").label("a"), gcToken(TokenType.Astrisk), gcRule("atomic").label("b")],
+            [gcRule("atomic").setName("a"), gcToken(TokenType.Astrisk), gcRule("atomic").setName("b")],
+            [gcRule("expr").setName("a"), gcToken(TokenType.Astrisk), gcRule("expr").setName("b")],
+            [gcRule("atomic").setName("a"), gcToken(TokenType.Astrisk), gcRule("expr").setName("b")],
+            [gcRule("expr").setName("a"), gcToken(TokenType.Astrisk), gcRule("atomic").setName("b")],
         ]);
+        this.defineGrammarRule("atomic", [[gcToken(TokenType.Name)], [gcToken(TokenType.IntegerLiteral)]]);
+
+        if (!this.verify()) throw new Error("Glow grammar set is incomplete");
     }
 }
