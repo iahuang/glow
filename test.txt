@@ -1,0 +1,988 @@
+GmrPattern {
+  components: [ GmrComponent { tokenType: 1, ruleName: null, name: null } ]
+}
+Attempting to match rule "expr" on string "a * b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string "a * b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string "a * b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string "a * b"
+   pattern: <Pattern $Name >
+String "a * b" matched pattern <Pattern $Name >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >
+Attempting to match rule "atomic" on string " b"
+   pattern: <Pattern $Name >
+String " b" matched pattern <Pattern $Name >
+   pattern: <Pattern [expr], $Astrisk, [expr] >
+Attempting to match rule "expr" on string " b"
+   pattern: <Pattern [paren] >
+Attempting to match rule "paren" on string " b"
+   pattern: <Pattern $ParenLeft, [expr], $ParenRight >
+   pattern: <Pattern [mult] >
+Attempting to match rule "mult" on string " b"
+   pattern: <Pattern [atomic], $Astrisk, [expr] >

@@ -9,6 +9,7 @@ export interface Token {
 }
 
 export enum TokenType {
+    _None,
     // A symbol such as a variable or function name.
     Name,
 

@@ -26,6 +26,20 @@ export class GmrPattern {
     constructor(...components: GmrComponent[]) {
         this.components = components;
     }
+
+    toString() {
+        return `<Pattern ${this.components
+            .map((component) => {
+                if (component.tokenType) {
+                    return "$" + TokenType[component.tokenType];
+                }
+                if (component.ruleName) {
+                    return `[${component.ruleName}]`;
+                }
+                return "(UNDEFINED)";
+            })
+            .join(", ")} >`;
+    }
 }
 
 export class GmrComponent {
@@ -93,6 +107,7 @@ export class RuleMatchResult {
         let match = this.matchedComponents.get(withName);
         if (!match)
             throw new Error(`Rule with name "${this.rule.name}" has no matched pattern component "${withName}"!`);
+        return match;
     }
 }
 
@@ -109,6 +124,51 @@ export function gcRule(ruleName: string) {
 
 export function gcToken(token: TokenType) {
     return new GmrComponent(token, null);
+}
+
+interface GmrMatchAttemptEnding {
+    rule: GmrRule;
+    offendingToken: Token;
+    expectedToken: TokenType;
+    depth: number;
+}
+
+function maxByKey<T>(array: T[], predicate: (element: T) => number) {
+    /*
+        Helper function to find the maximum
+        of an array based on some predicate
+    */
+
+    if (array.length === 0) throw new Error("Cannot find maximum of an empty array!");
+
+    let bmi = 0; // best max index
+    let bms = predicate(array[0]); // best max score
+
+    for (let i = 1; i < array.length; i++) {
+        let score = predicate(array[i]);
+        if (score > bms) {
+            bmi = i;
+            bms = score;
+        }
+    }
+    return array[bmi];
+}
+
+export class GmrMatchFailRecord {
+    /*
+        A helper class for keeping track of failed grammar rule match attempts
+        in order to determine helpful syntax errors.
+    */
+
+    attempts: GmrMatchAttemptEnding[] = [];
+
+    addAttempt(attempt: GmrMatchAttemptEnding) {
+        this.attempts.push(attempt);
+
+        // Remove attempts with a lower depth
+        // these aren't relevant anymore
+        this.attempts = this.attempts.filter((att) => att.depth >= attempt.depth);
+    }
 }
 
 export class Grammar {
@@ -157,15 +217,18 @@ export class Grammar {
         return r;
     }
 
-    attemptRuleMatch(ruleName: string, tokenStream: TokenStream) {
+    _attemptRuleMatch(ruleName: string, tokenStream: TokenStream, depth: number, record: GmrMatchFailRecord) {
         let rule = this.getRule(ruleName);
 
         // Loop through each pattern
         // attempting to match each one.
         // Return the first successful pattern match;
         // null if there was none.
+        if (tokenStream.peekToken().type === TokenType.EOF) return null;
+        console.log(`Attempting to match rule "${ruleName}" on string "${tokenStream.currString()}"`);
         for (let pattern of rule.patterns) {
-            let match = this.attemptPatternMatch(rule, pattern, tokenStream);
+            console.log(`   pattern: ${pattern.toString()}`);
+            let match = this.attemptPatternMatch(rule, pattern, tokenStream, depth, record);
             if (match) return match;
         }
         return null;
@@ -174,7 +237,13 @@ export class Grammar {
     // This function restores the tokenstream position after use
     // i.e. practically speaking, they do not modify the stream object
 
-    attemptPatternMatch(rule: GmrRule, pattern: GmrPattern, stream: TokenStream) {
+    attemptPatternMatch(
+        rule: GmrRule,
+        pattern: GmrPattern,
+        stream: TokenStream,
+        depth: number,
+        record: GmrMatchFailRecord
+    ) {
         let initialState = stream.state.clone();
 
         let match = new RuleMatchResult(rule, pattern);
@@ -182,6 +251,7 @@ export class Grammar {
         // Loop through each component in the pattern
         // trying to match each one. Return early
         // if one of the components fails to match.
+
         for (let component of pattern.components) {
             let name = component.name; // used later in the loop
 
@@ -190,41 +260,53 @@ export class Grammar {
                 // tries to match a specific token type
 
                 let token = stream.nextToken();
-                
+
                 if (token.type === component.tokenType) {
                     // make sure to keep track of the component
                     // if it was labeled
                     if (name) {
                         match.setMatchedComponent(name, { token: token, ruleMatch: null });
                     }
+                    depth++;
                 } else {
+                    record.addAttempt({
+                        rule: rule,
+                        offendingToken: token,
+                        expectedToken: component.tokenType,
+                        depth: depth,
+                    });
+                    // restore stream state
+                    stream.state.set(initialState);
                     return null;
                 }
             } else if (component.ruleName) {
                 // Otherwise, try to match a component
                 // to another grammar rule
 
-                let rmatch = this.attemptRuleMatch(component.ruleName, stream);
-                
+                let rmatch = this._attemptRuleMatch(component.ruleName, stream, depth, record);
+
                 if (rmatch) {
                     if (name) {
                         // make sure to keep track of the component
                         // if it was labeled
                         match.setMatchedComponent(name, { token: null, ruleMatch: rmatch });
                     }
-                    
+
                     // if the match was successful, we should
                     // move the stream ahead to the end of the match
                     stream.state.set(rmatch.endPosition!);
                 } else {
+                    // restore stream state
+                    stream.state.set(initialState);
                     return null;
                 }
             }
         }
         match.endPosition = stream.state.clone();
-
+        
         // restore stream state
         stream.state.set(initialState);
+        console.log(`String "${stream.currString()}" matched pattern ${pattern.toString()}`)
         return match;
     }
 }

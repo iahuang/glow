@@ -1,6 +1,6 @@
 import { SourcePos } from "../source";
 
-function indent(string: string, spaces = 4) {
+export function indent(string: string, spaces = 4) {
     /* Indents all the lines in [string] by [spaces] spaces */
 
     return string

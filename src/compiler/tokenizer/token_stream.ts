@@ -81,7 +81,15 @@ export class TokenState {
         /*
             Creates a copy of this object.
         */
-        return Object.assign(new TokenState(), this);
+        let s = new TokenState();
+        s.ln = this.ln;
+        s.index = this.index;
+        s.col = this.col;
+        return s;
+    }
+
+    equalTo(other: TokenState) {
+        return this.index === other.index && this.ln === other.ln && this.col === other.col;
     }
 }
 
@@ -120,6 +128,10 @@ export class TokenStream {
             Gets the current position in the file as a ln:col object.
         */
         return this.state.getPos();
+    }
+
+    currString() {
+        return this.source.contents.substring(this.state.index);
     }
 
     _nextToken(): Token {
@@ -189,6 +201,13 @@ export class TokenStream {
             t = this._nextToken();
         }
         return t;
+    }
+
+    peekToken() {
+        let saveState = this.state.clone();
+        let token = this.nextToken();
+        this.state.set(saveState);
+        return token;
     }
 
     loadSource(source: SourceFile) {
