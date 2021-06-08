@@ -1,4 +1,4 @@
-# Glow
+![glow](https://raw.githubusercontent.com/iahuang/glow/main/site_assets/logo.png)
 
 Glow is a programming language designed on top of Go, designed to bring more natural, flexible and feature-rich syntax to the already incredibly lightweight and fast Go language.
 
