@@ -102,10 +102,10 @@ export class TokenStream {
     // current position in the source file.
     readonly state: TokenState;
 
-    constructor() {
+    constructor(source: SourceFile) {
         this.matcher = new TokenMatcher();
         this.mode = TokenizerMode.Syntax;
-        this.source = null as any;
+        this.source = source;
 
         // set state variables
         this.state = new TokenState();
