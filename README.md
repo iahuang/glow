@@ -21,6 +21,8 @@ While this may be true in some cases, a lot of times, development happens increm
 
 ## Glow and Go Comparison
 
+Glow is not necessarily meant for brevity or a fewer number of keystrokes used in isolated examples. Rather, Glow code is meant to be overall more readable, and ideally in the long run, resulting in shorter code.
+
 **Glow**
 
 ```swift
@@ -73,7 +75,6 @@ func get_area(circle Circle) {
 
 circle = Circle {radius: 5}
 ```
-As you can see by the above examples, the point of Glow is not for terse code, but rather for readability.
 
 You can read more about the Glow project and the language on the [wiki](https://github.com/iahuang/glow/wiki).
 
