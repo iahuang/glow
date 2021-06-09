@@ -73,6 +73,7 @@ func get_area(circle Circle) {
 
 circle = Circle {radius: 5}
 ```
+As you can see by the above examples, the point of Glow is not for terse code, but rather for readability.
 
 You can read more about the Glow project and the language on the [wiki](https://github.com/iahuang/glow/wiki).
 
